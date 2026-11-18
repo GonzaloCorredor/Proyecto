@@ -1,4 +1,9 @@
-// Conexión a la base de datos (pendiente: se implementará cuando lo veamos en clase)
-//
-// const mysql = require('mysql2/promise');
-// module.exports = mysql.createPool({ host: 'localhost', user: 'root', password: '', database: 'buscador_viajes' });
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize('buscador_viajes', 'root', 'tu_contraseña_aqui', {
+    host: 'localhost',
+    dialect: 'mysql',
+    logging: false // True para consultas en la terminañ
+});
+
+module.exports = sequelize;
